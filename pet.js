@@ -14,7 +14,7 @@ virtual_pet.Pet = function(gameObj, gameLayer) {
     var dt = 100;
     var i, arrayLen, toRemove;
     lime.scheduleManager.scheduleWithDelay(function() {
-        this.happiness -= 0.1;
+        this.happiness -= 0.2;
         this.health -= 0.1;
         
         //console.log('happiness:'+this.happiness);
@@ -30,8 +30,8 @@ virtual_pet.Pet = function(gameObj, gameLayer) {
         toRemove = new Array();
         for(i = 0, arrayLen = this.gameObj.items.length; i<arrayLen; i++) {
             if(goog.math.Box.intersects(this.gameObj.items[i].getBoundingBox(), this.getBoundingBox())) {
-                this.happiness += this.gameObj.items[i].happiness;
-                this.health += this.gameObj.items[i].health;
+                this.happiness = Math.min(this.happiness+this.gameObj.items[i].happiness,100);
+                this.health = Math.min(this.health+this.gameObj.items[i].health,100);
                 toRemove.push(i);
             }
         }

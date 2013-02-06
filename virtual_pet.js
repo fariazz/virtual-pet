@@ -17,13 +17,13 @@ virtual_pet.start = function(){
         width: 320,
         height: 480,
         renderer: lime.Renderer.DOM,
-        maxPetSize: 100,
+        maxPetSize: 200,
         items: []
     };
     
-    director = new lime.Director(document.body,gameObj.width,gameObj.height);
-    gameScene = new lime.Scene().setRenderer(gameObj.renderer)
-    gameLayer = new lime.Layer();
+    var director = new lime.Director(document.body,gameObj.width,gameObj.height);
+    var gameScene = new lime.Scene().setRenderer(gameObj.renderer)
+    var gameLayer = new lime.Layer();
     
     var background = new lime.Sprite().setSize(gameObj.width,gameObj.height*4/5).
         setFill('#F3E2A9').setAnchorPoint(0,0).setPosition(0,0);
@@ -57,7 +57,7 @@ virtual_pet.start = function(){
             width: gameObj.height/10,
             height: gameObj.height/10,
             fill: 'images/apple.png',
-            happiness: 0,
+            happiness: -5,
             health: 20
         };
     });
