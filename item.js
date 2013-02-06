@@ -1,4 +1,5 @@
 goog.provide('virtual_pet.Item');
+goog.require('lime.Sprite');
 
 virtual_pet.Item = function(happiness, health) {
     goog.base(this);

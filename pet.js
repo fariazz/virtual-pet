@@ -1,4 +1,5 @@
 goog.provide('virtual_pet.Pet');
+goog.require('lime.Circle');
 
 virtual_pet.Pet = function(gameObj, gameLayer) {
     goog.base(this);
